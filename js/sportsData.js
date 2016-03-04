@@ -10,7 +10,7 @@ function loadXML() {
   		var data = getData(xmlhttp);
       console.log(data[3].getElementsByTagName("name")[0].childNodes[0].nodeValue);
   	
-      for (i = 0; i < x.length; i++) { 
+      for (i = 0; i < data.length; i++) { 
         table += "<tr><td>" + 
         data[i].getElementsByTagName("name")[1].childNodes[0].nodeValue +
         "</td><td>";
