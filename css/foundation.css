@@ -3042,10 +3042,7 @@ table.hover tr:nth-of-type(even):hover {
 
 .tabs-content {
   overflow: auto;
-<<<<<<< HEAD
   color: #303c3c;
-=======
->>>>>>> 94a75bdc932df181cd566cef3502465e983272e1
   padding-bottom: 10px;
   background: #fefefe;
   transition: all 0.5s ease;

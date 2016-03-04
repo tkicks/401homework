@@ -7,13 +7,9 @@ $(document).ready(function() {
 		SAMTab();
 	})
 	$('#illusion2Tab').click(function() {
-<<<<<<< HEAD
 		tTab();
 	})
 	$('#sportsData').click(function() {
 		sportsTab();
-=======
-		gridTab();
->>>>>>> 94a75bdc932df181cd566cef3502465e983272e1
 	})
 })
