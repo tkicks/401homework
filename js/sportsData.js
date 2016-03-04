@@ -9,7 +9,13 @@ function loadXML() {
   	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
   		var data = getData(xmlhttp);
       console.log(data[3].getElementsByTagName("name")[0].childNodes[0].nodeValue);
-  	}
+  	
+      for (i = 0; i < x.length; i++) { 
+        table += "<tr><td>" + 
+        x[i].getElementsByTagName("name")[1].childNodes[0].nodeValue +
+        "</td><td>";
+      }
+    }
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
 	xmlhttp.send();
