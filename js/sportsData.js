@@ -6,15 +6,16 @@ function sportsTab() {
 function loadXML() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-		myFunction(xmlhttp);
-	}
+  	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+  		var data = getData(xmlhttp);
+      console.log(x[3].getElementsByTagName("name")[0].childNodes[0].nodeValue);
+  	}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
 	xmlhttp.send();
 }
 
-function myFunction(xml) {
+function getData(xml) {
   var i;
   var xmlDoc = xml.responseXML;
   var table = "<tr><th>Team</th><th>Player</th></tr>";
@@ -25,5 +26,5 @@ function myFunction(xml) {
     "</td><td>";
   }
   document.getElementById("sportsVis").innerHTML = table;
-  console.log(x[3].getElementsByTagName("name")[1].childNodes[1].nodeValue);
+  return x;
 }
