@@ -17,7 +17,7 @@ function loadXML() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table = "<tr><th>Artist</th><th>Title</th></tr>";
+  var table = "<tr><th>Team</th><th>Player</th></tr>";
   var x = xmlDoc.getElementsByTagName("team")
   for (i = 0; i < x.length; i++) { 
     table += "<tr><td>" + 
