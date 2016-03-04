@@ -12,7 +12,7 @@ function loadXML() {
   	
       for (i = 0; i < x.length; i++) { 
         table += "<tr><td>" + 
-        x[i].getElementsByTagName("name")[1].childNodes[0].nodeValue +
+        data[i].getElementsByTagName("name")[1].childNodes[0].nodeValue +
         "</td><td>";
       }
     }
