@@ -2,10 +2,13 @@ body {
 	background-color: #ffe6cc;
 }
 
+<<<<<<< HEAD
 .descTitle {
 	text-align: center;
 }
 
+=======
+>>>>>>> 94a75bdc932df181cd566cef3502465e983272e1
 #banner {
 	text-align: center;
 }
@@ -14,11 +17,14 @@ body {
 	display: inline-block;
 }
 
+<<<<<<< HEAD
 #horizontal {
 	width: 200px;
 	height: 20px;
 }
 
+=======
+>>>>>>> 94a75bdc932df181cd566cef3502465e983272e1
 #illusion1Canvas {
 	width: 100%;
 	height: 400px;
@@ -28,6 +34,7 @@ body {
 }
 
 #profilePic {
+<<<<<<< HEAD
 	/*height: 10em;*/
 }
 
@@ -39,4 +46,7 @@ body {
 #vertical {
 	-webkit-transition-property: -webkit-transform;
 	-webkit-transition-duration: 2.0s;
+=======
+	height: 10em;
+>>>>>>> 94a75bdc932df181cd566cef3502465e983272e1
 }
