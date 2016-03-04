@@ -25,4 +25,5 @@ function myFunction(xml) {
     "</td><td>";
   }
   document.getElementById("sportsVis").innerHTML = table;
+  console.log(x[3].getElementsByTagName("name"));
 }
