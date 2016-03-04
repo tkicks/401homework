@@ -8,7 +8,7 @@ function loadXML() {
 	xmlhttp.onreadystatechange = function() {
   	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
   		var data = getData(xmlhttp);
-      console.log(x[3].getElementsByTagName("name")[0].childNodes[0].nodeValue);
+      console.log(data[3].getElementsByTagName("name")[0].childNodes[0].nodeValue);
   	}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
