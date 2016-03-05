@@ -27,7 +27,7 @@ function getData(xml) {
 	var x = xmlDoc.getElementsByTagName("team")
 	for (i = 0; i < x.length; i++) { 
 		var playerInfo = x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
-		var circle = makeSVG(team);
+		var circle = makeSVG(playerInfo);
 		document.getElementsById('svgCanvas').appendChild(circle);
 	}
 	document.getElementById("sportsVis").innerHTML = table;
