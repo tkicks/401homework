@@ -36,8 +36,8 @@ function getData(xml) {
 
 function makeSVG(playerInfo) {
 	var newElt = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-	newElt.setAttribute(cx, playerInfo.getElementsByTagName("average")[0].childNodes[0].nodeValue);
-	newElt.setAttribute(cy, playerInfo.getElementsByTagName("OBP")[0].childNodes[0].nodeValue);
-	newElt.setAttribute(r, playerInfo.getElementsByTagName("weight")[0].childNodes[0].nodeValue);
+	newElt.setAttribute('cx', playerInfo.getElementsByTagName("average")[0].childNodes[0].nodeValue);
+	newElt.setAttribute('cy', playerInfo.getElementsByTagName("OBP")[0].childNodes[0].nodeValue);
+	newElt.setAttribute('r', playerInfo.getElementsByTagName("weight")[0].childNodes[0].nodeValue);
 	return newElt;
 }
