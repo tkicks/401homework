@@ -4,16 +4,15 @@ function sportsTab() {
 }
 
 function loadXML() {
+  var data = null;
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-  	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-  		var data = getData(xmlhttp);
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+  		data = getData(xmlhttp);
       console.log(data[3].getElementsByTagName("name")[0].childNodes[0].nodeValue);
   	
       for (i = 0; i < data.length; i++) { 
-        table += "<tr><td>" + 
-        data[i].getElementsByTagName("name")[1].childNodes[0].nodeValue +
-        "</td><td>";
+        console.log(data[i].getElementsByTagName("name")[1].childNodes[0].nodeValue);
       }
     }
 	};
