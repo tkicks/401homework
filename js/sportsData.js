@@ -11,8 +11,7 @@ function loadXML() {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
 			var circle = makeSVG(data[0]);
-			document.getElementById('svgCanvas').appendChild(circle);
-			$("body").html($("body").html());
+			// document.getElementById('svgCanvas').appendChild(circle);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
@@ -30,9 +29,7 @@ function getData(xml) {
 }
 
 function makeSVG(playerInfo) {
-	var newElt = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-	newElt.setAttribute('cx', playerInfo.getElementsByTagName("average")[0].childNodes[0].nodeValue);
-	newElt.setAttribute('cy', playerInfo.getElementsByTagName("OBP")[0].childNodes[0].nodeValue);
-	newElt.setAttribute('r', playerInfo.getElementsByTagName("weight")[0].childNodes[0].nodeValue);
-	return newElt;
+	var circle = d3.select("svg").append("circle")
+		.attr("r", "10")
+    	.attr("style", "fill:white;stroke:black;stroke-width:5");
 }
