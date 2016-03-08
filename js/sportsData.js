@@ -38,7 +38,7 @@ function getData(xml) {
     names[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
     "</td><td>";
   }
-  document.getElementById("sportsVis").innerHTML = table;
+  // document.getElementById("sportsVis").innerHTML = table;
   return names;
 // =======
 	// var i;
