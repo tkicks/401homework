@@ -37,6 +37,5 @@ function makeSVG(playerInfo) {
 		.attr("cy", 30)
 		.attr("r", "10")
     	.attr("style", "fill:white;stroke:black;stroke-width:5");
-    	d3.select('#svgCanvas').append(circle);
     return circle;
 }
