@@ -6,7 +6,7 @@ function sportsTab() {
 function loadXML() {
 	var data = null;
 	var xmlhttp = new XMLHttpRequest();
-	d3.select('#svgCanvas').append('svg');
+	d3.select('#svgSpot').append('svg').attr("id", "svgCanvas");
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
