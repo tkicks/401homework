@@ -33,7 +33,7 @@ function getData(xml) {
   var xmlDoc = xml.responseXML;
   var table = "<tr><th>Team</th><th>Player</th></tr>";
   var names = xmlDoc.getElementsByTagName("team");
-  for (i = 0; i < x.length; i++) { 
+  for (i = 0; i < names.length; i++) { 
     table += "<tr><td>" + 
     names[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
     "</td><td>";
