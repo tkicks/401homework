@@ -35,6 +35,6 @@ function makeSVG(playerInfo) {
 		.attr("cy", 30)
 		.attr("r", "10")
     	.attr("style", "fill:white;stroke:black;stroke-width:5");
-    	document.getElementById('svgCanvas').appendChild(circle);
+    	document.getElementById('#svgCanvas').appendChild(circle);
     return circle;
 }
