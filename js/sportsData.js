@@ -39,7 +39,7 @@ function getData(xml) {
     "</td><td>";
   }
   document.getElementById("sportsVis").innerHTML = table;
-  return x;
+  return names;
 // =======
 	// var i;
 	// var xmlDoc = xml.responseXML;
