@@ -7,7 +7,7 @@ function loadXML() {
 	var data = null;
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
-<<<<<<< HEAD
+// <<<<<<< HEAD
   	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
   		var data = getData(xmlhttp);
       console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
@@ -28,7 +28,7 @@ function loadXML() {
 }
 
 function getData(xml) {
-<<<<<<< HEAD
+// <<<<<<< HEAD
   var i;
   var xmlDoc = xml.responseXML;
   var table = "<tr><th>Team</th><th>Player</th></tr>";
@@ -40,7 +40,7 @@ function getData(xml) {
   }
   document.getElementById("sportsVis").innerHTML = table;
   return x;
-=======
+// =======
 	// var i;
 	// var xmlDoc = xml.responseXML;
 	// var table = "<tr><th>Team</th><th>Player</th></tr>";
