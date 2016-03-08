@@ -12,7 +12,7 @@ function loadXML() {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
 			var circle = makeSVG(data[0]);
-			document.getElementById('svgCanvas').append(circle);
+			document.getElementById('svgCanvas').appendChild(circle);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
@@ -30,7 +30,7 @@ function getData(xml) {
 }
 
 function makeSVG(playerInfo) {
-	var circle = d3.select("svg").append("circle")
+	var circle = d3.select("#svgCanvas").append("circle")
 		.attr("cx", 30)
 		.attr("cy", 30)
 		.attr("r", "10")
