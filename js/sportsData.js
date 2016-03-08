@@ -12,7 +12,7 @@ function loadXML() {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
 			var circle = makeSVG(data[0]);
-			document.getElementById('svgCanvas').appendChild(circle);
+			document.getElementById('svgCanvas').append(circle);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
