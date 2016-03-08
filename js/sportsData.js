@@ -10,7 +10,8 @@ function loadXML() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
-			makeSVG(data[0]);
+			var circle = makeSVG(data[0]);
+			document.getElementsById('svgCanvas').appendChild(circle);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
@@ -18,7 +19,6 @@ function loadXML() {
 }
 
 function getData(xml) {
-// <<<<<<< HEAD
 	var i;
 	var xmlDoc = xml.responseXML;
 	var names = xmlDoc.getElementsByTagName("team");
