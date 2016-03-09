@@ -8,7 +8,8 @@ function loadXML() {
 	var xmlhttp = new XMLHttpRequest();
 	var svg = d3.select('#svgSpot').append('svg').attr("id", "svgCanvas")
 		.attr("height", 100)
-		.attr("width", 100);
+		.attr("width", 100)
+		.attr("viewbox", 200 0 300 200);
 	var maxVals = [0, 0];
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
