@@ -37,18 +37,17 @@ function getData(xml) {
 }
 
 function makeSVG(playerInfo, svg, maxHeight, maxWidth) {
+	// average is x axis (width) obp is y axis (height)
 	var height = playerInfo.getElementsByTagName("height")[0].childNodes[0].nodeValue;
 	var weight = playerInfo.getElementsByTagName("weight")[0].childNodes[0].nodeValue;
 	var average = playerInfo.getElementsByTagName("average")[0].childNodes[0].nodeValue;
 	var obp = playerInfo.getElementsByTagName("OBP")[0].childNodes[0].nodeValue;
 	var hr = playerInfo.getElementsByTagName("home_runs")[0].childNodes[0].nodeValue;
 
-	if (height > maxHeight) {
+	if (average > maxWidth)
+		maxWidth = width;
+	if (obp > maxHeight)
 		maxHeight = height;
-	}
-	if (width > maxWidth) {
-		maxWidth = width;	 
-	}
 
 	var circle = svg.append("circle")
 		.attr("cx", average*1000)
