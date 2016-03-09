@@ -9,13 +9,17 @@ function loadXML() {
 	var svg = d3.select('#svgSpot').append('svg').attr("id", "svgCanvas")
 		.attr("height", 100)
 		.attr("width", 100);
+	var maxHeight = 0;
+	var maxWidth = 0;
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
 			console.log(data.length);
 			for (var i = 0; i < data.length; i++)
-				makeSVG(data[i], svg);
+				var maxVals = makeSVG(data[i], svg, maxHeight, maxWidth);
+			svg.setAttribute("width", maxVals[0] + 100);
+			svg.setAttribute("height", maxVals[1] + 100);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
@@ -32,13 +36,19 @@ function getData(xml) {
 	return names;
 }
 
-function makeSVG(playerInfo, svg) {
+function makeSVG(playerInfo, svg, maxHeight, maxWidth) {
 	var height = playerInfo.getElementsByTagName("height")[0].childNodes[0].nodeValue;
 	var weight = playerInfo.getElementsByTagName("weight")[0].childNodes[0].nodeValue;
 	var average = playerInfo.getElementsByTagName("average")[0].childNodes[0].nodeValue;
 	var obp = playerInfo.getElementsByTagName("OBP")[0].childNodes[0].nodeValue;
 	var hr = playerInfo.getElementsByTagName("home_runs")[0].childNodes[0].nodeValue;
 
+	if (height > maxHeight) {
+		maxHeight = height;
+	}
+	if (width > maxWidth) {
+		maxWidth = width;	 
+	}
 
 	var circle = svg.append("circle")
 		.attr("cx", average*1000)
@@ -47,4 +57,6 @@ function makeSVG(playerInfo, svg) {
     	.style("fill", "white")
     	.style("stroke", "black")
     	.style("stroke-width", 5);
+
+    return {maxWidth, maxHeight};
 }
