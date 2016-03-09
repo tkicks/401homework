@@ -32,7 +32,7 @@ function getData(xml) {
 }
 
 function makeSVG(playerInfo, svg) {
-	var circle = svg.select("svgCanvas").enter().append("circle")
+	var circle = d3.select("svgCanvas").append("circle")
 		.attr("cx", 30)
 		.attr("cy", 30)
 		.attr("r", 10)
