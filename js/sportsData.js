@@ -42,7 +42,7 @@ function makeSVG(playerInfo, svg) {
 
 
 	var circle = svg.append("circle")
-		.attr("cx", average)
+		.attr("cx", average*100)
 		.attr("cy", obp)
 		.attr("r", hr/10)
     	.style("fill", "white")
