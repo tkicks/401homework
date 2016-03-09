@@ -37,8 +37,8 @@ function makeSVG(playerInfo, svg) {
 	var height = playerInfo.getElementsByTagName("height")[0].childNodes[0].nodeValue;
 	var weight = playerInfo.getElementsByTagName("weight")[0].childNodes[0].nodeValue;
 	var average = playerInfo.getElementsByTagName("average")[0].childNodes[0].nodeValue;
-	var obp = playerInfo.getElementsByTagName("obp")[0].childNodes[0].nodeValue;
-	var hr = playerInfo.getElementsByTagName("hr")[0].childNodes[0].nodeValue;
+	var obp = playerInfo.getElementsByTagName("OBP")[0].childNodes[0].nodeValue;
+	var hr = playerInfo.getElementsByTagName("home_runs")[0].childNodes[0].nodeValue;
 
 
 	var circle = svg.append("circle")
