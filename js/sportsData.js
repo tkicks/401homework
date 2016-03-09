@@ -14,7 +14,7 @@ function loadXML() {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
 			console.log(data.length);
-			for (var i = 0; i < data.size; i++)
+			for (var i = 0; i < data.length; i++)
 				var circle = makeSVG(data[i], svg);
 			
 		}
@@ -34,7 +34,7 @@ function getData(xml) {
 }
 
 function makeSVG(playerInfo, svg) {
-	
+	console.log(playerInfo.getElementsByTagName("height")[0].childNodes[0].nodeValue);
 	var circle = svg.append("circle")
 		.attr("cx", 30)
 		.attr("cy", 30)
