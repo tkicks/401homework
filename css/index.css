@@ -31,6 +31,10 @@ body {
 	/*height: 10em;*/
 }
 
+#svgCanvas {
+	overflow: auto;
+}
+
 #tResult {
 	font-size: 18px;
 	font-weight: bold;
