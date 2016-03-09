@@ -57,5 +57,5 @@ function makeSVG(playerInfo, svg, maxVals) {
     	.style("stroke", "black")
     	.style("stroke-width", 5);
 
-    return [maxWidth, maxHeight];
+    return maxVals;
 }
