@@ -45,9 +45,9 @@ function makeSVG(playerInfo, svg, maxHeight, maxWidth) {
 	var hr = playerInfo.getElementsByTagName("home_runs")[0].childNodes[0].nodeValue;
 
 	if (average > maxWidth)
-		maxWidth = width;
+		maxWidth = average;
 	if (obp > maxHeight)
-		maxHeight = height;
+		maxHeight = obp;
 
 	var circle = svg.append("circle")
 		.attr("cx", average*1000)
