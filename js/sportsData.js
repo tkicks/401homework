@@ -44,8 +44,8 @@ function makeSVG(playerInfo, svg, maxVals) {
 	var obp = playerInfo.getElementsByTagName("OBP")[0].childNodes[0].nodeValue;
 	var hr = playerInfo.getElementsByTagName("home_runs")[0].childNodes[0].nodeValue;
 
-	if (average > maxVals[0])
-		maxVals[0] = average;
+	if (hr > maxVals[0])
+		maxVals[0] = hr;
 	if (obp > maxVals[1])
 		maxVals[1] = obp;
 
