@@ -41,5 +41,6 @@ function makeSVG(playerInfo, svg) {
     	.style("fill", "white")
     	.style("stroke", "black")
     	.style("stroke-width", 5);
+    console.log("here");
     return circle;
 }
