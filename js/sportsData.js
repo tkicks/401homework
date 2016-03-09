@@ -11,7 +11,7 @@ function loadXML() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
-			var circle = makeSVG(data[0], svg);
+			var circle = makeSVG(data[0]);
 			
 		}
 	};
@@ -29,7 +29,7 @@ function getData(xml) {
 	return names;
 }
 
-function makeSVG(playerInfo, svg) {
+function makeSVG(playerInfo) {
 	var svg = d3.select('#svgSpot').append('svg').attr("id", "svgCanvas")
 		.attr("width", 200)
 		.attr("height", 200);
