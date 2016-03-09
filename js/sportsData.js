@@ -34,11 +34,17 @@ function getData(xml) {
 }
 
 function makeSVG(playerInfo, svg) {
-	console.log(playerInfo.getElementsByTagName("height")[0].childNodes[0].nodeValue);
+	var height = playerInfo.getElementsByTagName("height")[0].childNodes[0].nodeValue;
+	var weight = playerInfo.getElementsByTagName("weight")[0].childNodes[0].nodeValue;
+	var average = playerInfo.getElementsByTagName("average")[0].childNodes[0].nodeValue;
+	var obp = playerInfo.getElementsByTagName("obp")[0].childNodes[0].nodeValue;
+	var hr = playerInfo.getElementsByTagName("hr")[0].childNodes[0].nodeValue;
+
+
 	var circle = svg.append("circle")
-		.attr("cx", 30)
-		.attr("cy", 30)
-		.attr("r", 10)
+		.attr("cx", average)
+		.attr("cy", obp)
+		.attr("r", hr)
     	.style("fill", "white")
     	.style("stroke", "black")
     	.style("stroke-width", 5);
