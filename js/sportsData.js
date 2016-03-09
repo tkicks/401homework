@@ -37,6 +37,8 @@ function makeSVG(playerInfo) {
 		.attr("cx", 30)
 		.attr("cy", 30)
 		.attr("r", 10)
-    	.style("fill", "white");
+    	.style("fill", "white")
+    	.style("stroke", "black")
+    	.style("stroke-width", 5);
     return circle;
 }
