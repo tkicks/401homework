@@ -18,8 +18,9 @@ function loadXML() {
 			console.log(data.length);
 			for (var i = 0; i < data.length; i++)
 				var maxVals = makeSVG(data[i], svg, maxHeight, maxWidth);
-			svg.attr("width", maxVals[0] + 100);
-			svg.attr("height", maxVals[1] + 100);
+			console.log(maxVals[0]);
+			// svg.attr("width", maxVals[0] + 100);
+			// svg.attr("height", maxVals[1] + 100);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
