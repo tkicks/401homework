@@ -6,9 +6,7 @@ function sportsTab() {
 function loadXML() {
 	var data = null;
 	var xmlhttp = new XMLHttpRequest();
-	var svg = d3.select('#svgSpot').append('svg').attr("id", "svgCanvas")
-		.attr("width", 200)
-		.attr("height", 200);
+	
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
@@ -32,7 +30,10 @@ function getData(xml) {
 }
 
 function makeSVG(playerInfo, svg) {
-	var circle = d3.select("svgCanvas").append("circle")
+	var svg = d3.select('#svgSpot').append('svg').attr("id", "svgCanvas")
+		.attr("width", 200)
+		.attr("height", 200);
+	var circle = svg.append("circle")
 		.attr("cx", 30)
 		.attr("cy", 30)
 		.attr("r", 10)
