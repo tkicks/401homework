@@ -15,7 +15,7 @@ function loadXML() {
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
 			console.log(data.length);
 			for (var i = 0; i < data.length; i++)
-				var circle = makeSVG(data[i], svg);
+				makeSVG(data[i], svg);
 			
 		}
 	};
@@ -44,10 +44,8 @@ function makeSVG(playerInfo, svg) {
 	var circle = svg.append("circle")
 		.attr("cx", average)
 		.attr("cy", obp)
-		.attr("r", hr)
+		.attr("r", hr/10)
     	.style("fill", "white")
     	.style("stroke", "black")
     	.style("stroke-width", 5);
-    console.log("here");
-    return circle;
 }
