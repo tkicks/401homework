@@ -13,7 +13,7 @@ function loadXML() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
-			console.log(data.size);
+			console.log(data.length);
 			for (var i = 0; i < data.size; i++)
 				var circle = makeSVG(data[i], svg);
 			
