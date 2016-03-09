@@ -17,7 +17,7 @@ function loadXML() {
 			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
 			console.log(data.length);
 			for (var i = 0; i < data.length; i++)
-				var maxVals = makeSVG(data[i], svg, maxHeight, maxWidth);
+				var maxVals[] = makeSVG(data[i], svg, maxHeight, maxWidth);
 			console.log(maxVals[0]);
 			// svg.attr("width", maxVals[0] + 100);
 			// svg.attr("height", maxVals[1] + 100);
@@ -58,5 +58,5 @@ function makeSVG(playerInfo, svg, maxHeight, maxWidth) {
     	.style("stroke", "black")
     	.style("stroke-width", 5);
 
-    return {maxWidth, maxHeight};
+    return [maxWidth, maxHeight];
 }
