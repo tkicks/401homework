@@ -92,6 +92,6 @@ function makeAxes(svg, maxVals)
 	//Create Y axis
 	svg.append("g")
 		.attr("class", "axis")
-		.attr("transform", "translate(" + maxVals[0]*1000-100 + ",0)")
+		.attr("transform", "translate(" + maxVals[0]*1000+100 + ",0)")
 		.call(yAxis);
 }
