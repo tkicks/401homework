@@ -9,7 +9,7 @@ function loadXML() {
 	var svg = d3.select('#svgSpot').append('svg').attr("id", "svgCanvas")
 		.attr("height", 100)
 		.attr("width", 100);
-		
+
 	var axisScale = d3.scale.linear()
 	                        .domain([0, 100])
 	                        .range([0, 400]);
@@ -19,7 +19,7 @@ function loadXML() {
 	                  .scale(axisScale);
 	
 	//Create an SVG group Element for the Axis elements and call the xAxis function
-	var xAxisGroup = svgContainer.append("g")
+	var xAxisGroup = svg.append("g")
 	                             .call(xAxis);
 
 	var maxVals = [0, 0];
