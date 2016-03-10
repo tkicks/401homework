@@ -59,11 +59,11 @@ function makeSVG(playerInfo, svg, maxVals) {
 
 	if (average > maxVals[0])
 		maxVals[0] = average;
-	else if (average < maxVals[2])
+	if (average < maxVals[2])
 		maxVals[2] = average;
 	if (obp > maxVals[1])
 		maxVals[1] = obp;
-	else if (obp < maxVals[3])
+	if (obp < maxVals[3])
 		maxVals[3] = obp;
 
 	var circle = svg.append("circle")
