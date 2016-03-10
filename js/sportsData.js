@@ -22,20 +22,7 @@ function loadXML() {
 			svg.attr("width", maxVals[0]*1000 + 100);
 			svg.attr("height", maxVals[1]*1000 + 100);
 
-			var axisScale = d3.scale.linear()
-									.domain([maxVals[2]*1000-100, maxVals[0]*1000+100])
-									.range([maxVals[3]*1000-100, maxVals[0]*1000+100]);
-			
-			//Create the Axis
-			var xAxis = d3.svg.axis()
-							  .scale(axisScale)
-							  .orient("bottom");
-			
-			//Create an SVG group Element for the Axis elements and call the xAxis function
-			var xAxisGroup = svg.append("g")
-								.attr("class", "axis")
-								.attr("transform", "translate(0," + (h-padding) + ")")
-								.call(xAxis);
+			makeAxes(svg, maxVals);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
@@ -78,4 +65,35 @@ function makeSVG(playerInfo, svg, maxVals) {
 		.style("stroke-width", 5);
 
 	return maxVals;
+}
+
+function makeAxes(svg, maxVals)
+{
+	var axisScale = d3.scale.linear()
+							.domain([maxVals[2]*1000-100, maxVals[0]*1000+100])
+							.range([maxVals[3]*1000-100, maxVals[0]*1000+100]);
+
+	//Create the Axis
+	var xAxis = d3.svg.axis()
+					  .scale(axisScale)
+					  .orient("bottom");
+
+	//Create an SVG group Element for the Axis elements and call the xAxis function
+	var xAxisGroup = svg.append("g")
+						.attr("class", "axis")
+						.attr("transform", "translate(0," + (maxVals[1]*1000+100) + ")")
+						.call(xAxis);
+
+	//Define Y axis
+	var yAxis = d3.svg.axis()
+					  .scale(yScale)
+					  .orient("left")
+					  .ticks(5);
+	and this, near the bottom:
+
+	//Create Y axis
+	svg.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(" + padding + ",0)")
+		.call(yAxis);
 }
