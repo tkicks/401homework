@@ -87,13 +87,11 @@ function makeAxes(svg, maxVals)
 	//Define Y axis
 	var yAxis = d3.svg.axis()
 					  .scale(yScale)
-					  .orient("left")
-					  .ticks(5);
-	and this, near the bottom:
+					  .orient("left");
 
 	//Create Y axis
 	svg.append("g")
 		.attr("class", "axis")
-		.attr("transform", "translate(" + padding + ",0)")
+		.attr("transform", "translate(" + maxVals[0]*1000-100 + ",0)")
 		.call(yAxis);
 }
