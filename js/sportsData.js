@@ -81,7 +81,7 @@ function makeAxes(svg, maxVals)
 	//Create an SVG group Element for the Axis elements and call the xAxis function
 	var xAxisGroup = svg.append("g")
 						.attr("class", "axis")
-						.attr("transform", "translate(0," + (maxVals[1]*1000+200) + ")")
+						.attr("transform", "translate(0," + (maxVals[1]*1000) + ")")
 						.call(xAxis);
 
 	//Define Y axis
