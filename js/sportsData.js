@@ -86,7 +86,7 @@ function makeAxes(svg, maxVals)
 
 	//Define Y axis
 	var yAxis = d3.svg.axis()
-					  .scale(yScale)
+					  .scale(axisScale)
 					  .orient("left");
 
 	//Create Y axis
