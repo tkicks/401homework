@@ -10,7 +10,7 @@ function loadXML() {
 		.attr("height", 100)
 		.attr("width", 100);
 
-	var maxVals = [0, 0, 0, 0];			// x max, y max, x min, y min
+	var maxVals = [0, 0, 1000, 1000];			// x max, y max, x min, y min
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
