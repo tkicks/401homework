@@ -10,19 +10,7 @@ function loadXML() {
 		.attr("height", 100)
 		.attr("width", 100);
 
-	var axisScale = d3.scale.linear()
-	                        .domain([0, 100])
-	                        .range([0, 400]);
-	
-	//Create the Axis
-	var xAxis = d3.svg.axis()
-	                  .scale(axisScale);
-	
-	//Create an SVG group Element for the Axis elements and call the xAxis function
-	var xAxisGroup = svg.append("g")
-	                             .call(xAxis);
-
-	var maxVals = [0, 0];
+	var maxVals = [0, 0, 0, 0];			// x max, y max, x min, y min
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
@@ -33,6 +21,18 @@ function loadXML() {
 			// console.log(maxVals[0]);
 			svg.attr("width", maxVals[0]*1000 + 100);
 			svg.attr("height", maxVals[1]*1000 + 100);
+
+			var axisScale = d3.scale.linear()
+									.domain([maxVals[2]*1000-100, maxVals[0]*1000+100])
+									.range([maxVals[3]*1000-100, maxVals[0]*1000+100]);
+			
+			//Create the Axis
+			var xAxis = d3.svg.axis()
+							  .scale(axisScale);
+			
+			//Create an SVG group Element for the Axis elements and call the xAxis function
+			var xAxisGroup = svg.append("g")
+								.call(xAxis);
 		}
 	};
 	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
@@ -59,16 +59,20 @@ function makeSVG(playerInfo, svg, maxVals) {
 
 	if (average > maxVals[0])
 		maxVals[0] = average;
+	else if (average < maxVals[2])
+		maxVals[2] = average;
 	if (obp > maxVals[1])
 		maxVals[1] = obp;
+	else if (obp < maxVals[3])
+		maxVals[3] = obp;
 
 	var circle = svg.append("circle")
 		.attr("cx", average*1000)
 		.attr("cy", obp*1000)
 		.attr("r", hr/10)
-    	.style("fill", "white")
-    	.style("stroke", "black")
-    	.style("stroke-width", 5);
+		.style("fill", "white")
+		.style("stroke", "black")
+		.style("stroke-width", 5);
 
-    return maxVals;
+	return maxVals;
 }
