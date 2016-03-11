@@ -14,8 +14,16 @@ function loadXML() {
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var data = getData(xmlhttp);
-			console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
-			console.log(data.length);
+			// console.log(data[3].getElementsByTagName("height")[0].childNodes[0].nodeValue);
+			// console.log(data.length);
+			//Create scale functions
+			var xScale = d3.scale.linear()
+								 .domain([0, d3.max(data, function(d) { return d[0]; })])
+								 .range([0, w]);
+
+			var yScale = d3.scale.linear()
+								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+								 .range([h, 0]);
 			for (var i = 0; i < data.length; i++)
 				maxVals = makeSVG(data[i], svg, maxVals);
 			// console.log(maxVals[0]);
@@ -25,7 +33,7 @@ function loadXML() {
 			makeAxes(svg, maxVals);
 		}
 	};
-	xmlhttp.open("GET", "./files/sportsData1.xml" , true);
+	xmlhttp.open("GET", "http://cs.wheatoncollege.edu/~public/sportsData1.xml" , true);
 	xmlhttp.send();
 }
 
